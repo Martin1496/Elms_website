@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="container my-5">
+    <div class="card">
+      {% if blogpost.image %}
+        <img class="card-img-top" src="{{ blogpost.image.url }}" alt="{{ blogpost.title }}">
+      {% endif %}
+      <div class="card-body">
+        <h1 class="card-title">{{ blogpost.title }}</h1>
+        <p class="card-text">{{ blogpost.content }}</p>
+      </div>
+      <div class="card-footer">
+        <a href="{% url 'Blogpost' %}" class="btn btn-primary">Back to Posts</a>
+      </div>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container-fluid bg-white">
+  <div class="row justify-content-center">
+    <div class="col-lg-4 col-md-6 col-sm-8 my-5">
+      <div class="card border-light bg-dark">
+       <h2>Logout</h2>
+    <form method="POST">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Logout</button>
+</form>
+        <div class="card-footer bg-transparent">
+          <p class="text-white text-center mb-0">Already have an account? <a href="{% url 'login' %}" class="text-primary">Log in here</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
